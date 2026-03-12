@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "SES",
+  "version": "2.0",
+  "description": "Search for electrical safety",
+  "permissions": [
+    "contextMenus",
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "http://localhost:49850/*",
+    "http://127.0.0.1:49850/*",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Настройки SES"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["fuse.min.js", "content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_end"
+    }
+  ]
+}
