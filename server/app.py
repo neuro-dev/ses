@@ -111,4 +111,4 @@ if __name__ == '__main__':
     print("🔍 Status endpoint: http://localhost:49850/status")
     print("📁 Data directory:", DATA_DIR)
     print("=" * 60)
-    app.run(host='0.0.0.0', port=49850, debug=True)
+    app.run(host='0.0.0.0', port=49850, debug=True, ssl_context=('msk_cert.pem', 'msk_pk.pem'))
